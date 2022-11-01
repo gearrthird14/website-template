@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  width: 1568px;
+	height: 150px;
+  margin: 0 0 0 40px;
+  .tabGroup {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   .tabList {
+    background: blue;
+    height: 100%;
+    border-radius: 10px;
+    width: 224px;
+    .tabNames {
+      width: 100%;
+      height: 100%;
+      span {
+        font-size: 25px;
+        font-weight: 700;
+      }
+      &.active {
+        color: white;
+        background: linear-gradient(transparent, white);
+      }
+    }
+   }
+  }
+}

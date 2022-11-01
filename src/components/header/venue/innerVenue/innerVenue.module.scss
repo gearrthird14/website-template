@@ -1,0 +1,125 @@
+.innerVenueContainer {
+	.innerVenueDefault {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 0 0 296px;
+		width: 1568px;
+		height: 768px;
+		display: flex;
+		background: #E4EFF9;
+    box-shadow: 0px 0px 10px 0 (rgb(0 5 255));
+		border-radius: 10px;
+    opacity: 0;
+    transform: translateY(500px);
+    // &:nth-of-type(2) {
+    //   .venueItemContent {
+    //     .leftContent {
+        
+    //     }
+    //   }
+    // }
+		&.innerVenueIn {
+      animation: innerVenue .15s both;
+      transition: .1s ease-in-out;
+      // opacity: 1;
+		  // transform: unset;
+		}
+		.venueItemContent {
+			display: flex;
+      .leftContent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 110px 0 0 72px;
+        .englishTitle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 710px;
+          height: 194px;
+          h1 {
+            font-size: 178.450px;
+            color: white;
+          }
+        }
+        .description {
+          display: flex;
+          align-items: center;
+          text-align: center;
+          width: 593px;
+          height: 95px;
+        }
+        .venueBtnGrp {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 250px ;
+          .venueBtn {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 140px;
+            height: 180px;
+            margin: 0 0 0 46px;
+            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 100%) 0%, rgba(250, 250, 255, 0.02)9.1%, 
+            rgba(255,255,255, 0.0074) 100%);
+            opacity: 0;
+            border: 1px green solid;
+            &:first-child {
+              margin: 0;
+            }
+            .btnTitle {
+              width: 100%;
+              height: 40px;
+              border-radius: 10px 10px 100px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 1px blue solid;
+            }
+            &.animateee {
+              animation: animate 2s;
+              animation-fill-mode: both;
+              &:nth-child(2) {
+                animation-delay: .1s;
+              }
+              &:nth-child(3) {
+                animation-delay: .2s;
+              }
+              &:nth-child(4) {
+                animation-delay: .3s;
+              }
+              &:nth-child(5) {
+                animation-delay: .4s;
+              }
+            }
+          }
+        }
+      }
+		}
+	}
+}
+
+@keyframes animate {
+	from { 
+		opacity: 0;
+		transform: translateY(80px);
+	}
+	to {
+		opacity: 1;
+		transform: unset;
+	}
+}
+
+@keyframes innerVenue {
+	from { 
+		opacity: 0;
+    transform: translateY(500px);
+	}
+	to {
+		opacity: 1;
+		transform: unset;
+	}
+}
