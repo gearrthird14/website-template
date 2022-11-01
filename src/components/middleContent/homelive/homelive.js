@@ -1,8 +1,13 @@
 import React from 'react'
-
+// Styles
+import styles from './homeLive.module.scss';
 const Homelive = () => {
   return (
-    <div>Homelive</div>
+   <>
+    <div className={styles.homeLiveContainer}>
+
+    </div>
+   </>
   )
 }
 
