@@ -1,35 +1,35 @@
 export const loginBtn = [
   {
     userOut: "Login",
-    userIn: "Wallet", 
+    userIn: "存款",  //Deposit
   },
   {
     userOut: "Register",
-    userIn: "Withdraw"
+    userIn: "转账", // Transfer
   },
   {
-    userIn: "Deposit"
+    userIn: "取款" // Withdraw Money
   }
 ]
 
 export const sideVenue = [
   {
-    sideVenue: "Sponsor"
+    sideVenue: "首页" // Front-page
   },
   {
-    sideVenue: "Agent"
+    sideVenue: "发现" // Discover
   },
   {
-    sideVenue: "WEWE"
+    sideVenue: "客服" // Customer Service
   },
   {
-    sideVenue: "ASD"
+    sideVenue: "优惠" // Offer
   },
   {
-    sideVenue: "ZXc"
+    sideVenue: "赞助" // Sponsorship
   },
   {
-    sideVenue: "APP"
+    sideVenue: "合营" // Joint Venture
   },
 ]
 

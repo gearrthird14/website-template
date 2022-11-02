@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import classNames from 'classnames';
 import { loginBtn } from '../../../api/leftContent';
 import { sideVenue } from '../../../api/leftContent';
@@ -12,24 +12,32 @@ const UserInfo = () => {
   const [hasPCDownload, setHasPCDownload] = useState(false);
   const [sportsAppDownload, setSportsAppDownload] = useState(false)
 
+  useEffect(() => {
+    setIsLogin(true);
+  }, []) 
+
+  const filterLogin = (item, index) => {
+    if (!isLogin && index > 1) {
+      return '';
+    }
+    return item;
+  }
+
   return (
    <>
     <div className={styles.leftContent}>
       <div className={styles.avatarContainer}>
         <div className={styles.avatar}></div>
         <div className={styles.btnGrp}>
-          {loginBtn?.map((item) => (
+          {loginBtn?.filter(filterLogin).map((item) => (
             <>
               { isLogin ? ( 
                 <div className={styles.btnTab1}>
-                  {item.userIn}
+                  <span>{item?.userIn}</span>
                 </div>
               ) : (
-              <div className={classNames ({
-                [styles.btnTab2]:true,
-                [styles.btnTab3]: !isLogin
-              })}>
-                  {item.userOut}
+                <div className={ styles.btnTab2}>
+                  <span>{item?.userOut}</span>
                 </div>
               )}
             </>
@@ -42,7 +50,7 @@ const UserInfo = () => {
             <div 
             key={i}
             className={styles.sideVenueTabs}>
-              {item.sideVenue}
+              <span>{item.sideVenue}</span>
             </div>
           ))}
         </div>

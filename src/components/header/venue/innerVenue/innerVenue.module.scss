@@ -10,8 +10,11 @@
 		background: #E4EFF9;
     // box-shadow: 0px 0px 10px 0 (rgb(0 5 255));
 		border-radius: 10px;
-    opacity: 0;
-    transform: translateY(1000px);
+    opacity: 1;
+    transform: translateY(100vh);
+    transition: .15s ease;
+    z-index: 1;
+    // transition: 3s ease;
     // &:nth-of-type(2) {
     //   .venueItemContent {
     //     .leftContent {
@@ -20,10 +23,12 @@
     //   }
     // }
 		&.innerVenueIn {
-      animation: innerVenue .15s both;
-      transition: .1s ease-in-out;
+      transform: unset;
+      // animation: innerVenue 1s ease-in-out;
+      // animation-fill-mode: both;
       // opacity: 1;
 		  // transform: unset;
+      z-index: 2;
 		}
 		.venueItemContent {
 			display: flex;
@@ -115,11 +120,21 @@
 
 @keyframes innerVenue {
 	from { 
-		opacity: 0;
-    transform: translateY(500px);
+    transform: translateY(100vh);
 	}
 	to {
-		opacity: 1;
 		transform: unset;
+    pointer-events: unset;
+    opacity: 1;
+	}
+}
+
+@keyframes outerVenue {
+	from { 
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+    pointer-events: none;
 	}
 }
